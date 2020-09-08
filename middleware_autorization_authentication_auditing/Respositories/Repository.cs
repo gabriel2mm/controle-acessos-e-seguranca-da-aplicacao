@@ -2,13 +2,15 @@
 using middleware.Contracts;
 using middleware_autorization_authentication_auditing.Context;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace middleware.Respositories
 {
-    public class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : class
+    /// <summary>
+    /// Abstract class that standardizes data access
+    /// </summary>
+    /// <typeparam name="TEntity">Model entity of the database</typeparam>
+    public abstract class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : class
     {
         private bool isDisposed;
         protected readonly Context _context;

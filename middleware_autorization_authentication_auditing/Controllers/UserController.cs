@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using middleware.Helpers;
 using middleware_autorization_authentication_auditing.Models;
 using Newtonsoft.Json.Linq;
 using System;
@@ -10,10 +11,12 @@ using System.Threading.Tasks;
 
 namespace middleware_autorization_authentication_auditing.Controllers
 {
+    /// <summary>
+    /// User Controller
+    /// </summary>
     [ApiController]
     [Route("api/users")]
     [Produces("application/json")]
-    [Authorize]
     public class UserController : ControllerBase
     {
         private ILogger<UserController> _logger;
@@ -25,7 +28,12 @@ namespace middleware_autorization_authentication_auditing.Controllers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Returns all registered users
+        /// </summary>
+        /// <returns>Json Array</returns>
         [HttpGet]
+        [Authorize(policy: Permission.Users.Viwer)]
         public IActionResult GetAll()
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -34,8 +42,15 @@ namespace middleware_autorization_authentication_auditing.Controllers
             return Ok(_userManager.Users.ToList());
         }
 
+        /// <summary>
+        /// returns a specific user
+        /// </summary>
+        /// <param name="id">User identification string</param>
+        /// <returns>Json Object</returns>
         [Route("{id?}")]
         [HttpGet]
+        [Authorize(policy: Permission.Users.Viwer)]
+        [Produces("application/json")]
         public async Task<IActionResult> FindById(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -44,8 +59,16 @@ namespace middleware_autorization_authentication_auditing.Controllers
             return Ok(user);
         }
 
+        /// <summary>
+        /// Updates a specific user
+        /// </summary>
+        /// <param name="id">User identification string</param>
+        /// <param name="userModel">User object</param>
+        /// <returns>if it is successfully updated it returns a user, otherwise it returns a json error</returns>
         [Route("{id?}")]
         [HttpPut]
+        [Authorize(policy: Permission.Users.Manager)]
+        [Produces("application/json")]
         public async Task<IActionResult> Update(String id, [FromBody] User userModel)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -65,8 +88,15 @@ namespace middleware_autorization_authentication_auditing.Controllers
             return BadRequest(new { error = "Não foi possível atualizar a role" });
         }
 
+        /// <summary>
+        /// Deletes a user
+        /// </summary>
+        /// <param name="id">User identification string</param>
+        /// <returns>Status code 200 </returns>
         [Route("{id?}")]
         [HttpDelete]
+        [Authorize(policy: Permission.Users.Manager)]
+        [Produces("application/json")]
         public async Task<IActionResult> Delete(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -82,8 +112,23 @@ namespace middleware_autorization_authentication_auditing.Controllers
             return BadRequest(new { error = "Não foi possível excluir role" });
         }
 
+        /// <summary>
+        /// reset the password for a specific user
+        /// </summary>
+        /// <remarks>
+        ///     Sample request: 
+        ///     {
+        ///         "token" : "user refresh token",
+        ///         "newPassword" : "Strign new password"
+        ///     }
+        /// </remarks>
+        /// <param name="id">User identification string</param>
+        /// <param name="json">JObject</param>
+        /// <returns></returns>
         [Route("reset/{id?}")]
         [HttpPost]
+        [Authorize(policy: Permission.Users.Manager)]
+        [Produces("application/json")]
         public async Task<IActionResult> ResetPassword(String id, [FromBody] JObject json)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -110,12 +155,22 @@ namespace middleware_autorization_authentication_auditing.Controllers
 
         }
 
+        /// <summary>
+        ///  Generate token password refresh
+        /// </summary>
+        /// <param name="id">User identification string</param>
+        /// <returns>String token</returns>
         [HttpGet]
         [Route("reset/{id?}")]
+        [Authorize(policy: Permission.Users.Manager)]
+        [Produces("application/json")]
         public async Task<IActionResult> TokenReset(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
             String token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
+            _logger.LogInformation("O Usuário {0} Gerou um token refresh de senha {1} a partir do usuário {2}", _login, token, user.Login);
 
             return Ok(token);
         }

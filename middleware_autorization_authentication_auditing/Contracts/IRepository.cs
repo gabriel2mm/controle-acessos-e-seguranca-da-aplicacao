@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace middleware.Contracts
 {
+    /// <summary>
+    /// Contract for all repositories
+    /// </summary>
+    /// <typeparam name="TEntity">Database model class</typeparam>
     public interface IRepository<TEntity> where TEntity : class
     {
         IQueryable<TEntity> GetAll();

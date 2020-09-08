@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
 
-namespace middleware_autorization_authentication_auditing.Context
+namespace middleware.Context
 {
     /// <summary>
     /// Entityframework Context
@@ -10,7 +10,8 @@ namespace middleware_autorization_authentication_auditing.Context
     public class Context : IdentityDbContext
     {
         public Context(DbContextOptions options) : base(options) { }
-
-        public DbSet<User> _Users { get; set; }
+        public virtual DbSet<User> _Users { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<Request> Request { get; set; }
     }
 }

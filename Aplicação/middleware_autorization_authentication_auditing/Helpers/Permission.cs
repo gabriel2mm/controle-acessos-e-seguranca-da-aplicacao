@@ -25,5 +25,17 @@ namespace middleware.Helpers
             public const String Viwer = "Permission.Accounts.Viwer";
             public const String Manager = "Permission.Accounts.Manager";
         }
+
+        public static class Requests
+        {
+            public const String Viwer = "Permission.Requests.Viwer";
+            public const String Manager = "Permission.Requests.Manager";
+        }
+
+        public static class Orders
+        {
+            public const String Viwer = "Permission.Orders.Viwer";
+            public const String Manager = "Permission.Orders.Manager";
+        }
     }
 }

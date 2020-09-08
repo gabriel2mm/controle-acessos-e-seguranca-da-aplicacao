@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace middleware_autorization_authentication_auditing.Models
+namespace middleware.Models
 {
     [Table("Usuario")]
     public class User : IdentityUser

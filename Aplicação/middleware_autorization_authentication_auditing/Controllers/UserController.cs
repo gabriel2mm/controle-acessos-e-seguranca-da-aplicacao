@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using middleware.Helpers;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace middleware_autorization_authentication_auditing.Controllers
+namespace middleware.Controllers
 {
     /// <summary>
     /// User Controller
@@ -21,7 +21,6 @@ namespace middleware_autorization_authentication_auditing.Controllers
     {
         private ILogger<UserController> _logger;
         private UserManager<User> _userManager;
-
         public UserController(UserManager<User> userManager, ILogger<UserController> logger)
         {
             _logger = logger;
@@ -43,14 +42,13 @@ namespace middleware_autorization_authentication_auditing.Controllers
         }
 
         /// <summary>
-        /// returns a specific user
+        /// Returns a specific user
         /// </summary>
         /// <param name="id">User identification string</param>
         /// <returns>Json Object</returns>
         [Route("{id?}")]
         [HttpGet]
         [Authorize(policy: Permission.Users.Viwer)]
-        [Produces("application/json")]
         public async Task<IActionResult> FindById(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -68,7 +66,6 @@ namespace middleware_autorization_authentication_auditing.Controllers
         [Route("{id?}")]
         [HttpPut]
         [Authorize(policy: Permission.Users.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Update(String id, [FromBody] User userModel)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -96,7 +93,6 @@ namespace middleware_autorization_authentication_auditing.Controllers
         [Route("{id?}")]
         [HttpDelete]
         [Authorize(policy: Permission.Users.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Delete(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -113,7 +109,7 @@ namespace middleware_autorization_authentication_auditing.Controllers
         }
 
         /// <summary>
-        /// reset the password for a specific user
+        /// Reset the password for a specific user
         /// </summary>
         /// <remarks>
         ///     Sample request: 
@@ -128,7 +124,6 @@ namespace middleware_autorization_authentication_auditing.Controllers
         [Route("reset/{id?}")]
         [HttpPost]
         [Authorize(policy: Permission.Users.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> ResetPassword(String id, [FromBody] JObject json)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -156,14 +151,13 @@ namespace middleware_autorization_authentication_auditing.Controllers
         }
 
         /// <summary>
-        ///  Generate token password refresh
+        /// Generate token password refresh
         /// </summary>
         /// <param name="id">User identification string</param>
         /// <returns>String token</returns>
         [HttpGet]
         [Route("reset/{id?}")]
         [Authorize(policy: Permission.Users.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> TokenReset(String id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -174,6 +168,5 @@ namespace middleware_autorization_authentication_auditing.Controllers
 
             return Ok(token);
         }
-
     }
 }

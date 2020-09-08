@@ -4,60 +4,16 @@
         <name>middleware</name>
     </assembly>
     <members>
-        <member name="T:middleware_autorization_authentication_auditing.Controllers.UserController">
+        <member name="T:middleware.Context.Context">
             <summary>
-            User Controller
+            Entityframework Context
             </summary>
         </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.GetAll">
+        <member name="T:middleware.Contracts.IRepository`1">
             <summary>
-            Returns all registered users
+            Contract for all repositories
             </summary>
-            <returns>Json Array</returns>
-        </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.FindById(System.String)">
-            <summary>
-            returns a specific user
-            </summary>
-            <param name="id">User identification string</param>
-            <returns>Json Object</returns>
-        </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.Update(System.String,middleware_autorization_authentication_auditing.Models.User)">
-            <summary>
-            Updates a specific user
-            </summary>
-            <param name="id">User identification string</param>
-            <param name="userModel">User object</param>
-            <returns>if it is successfully updated it returns a user, otherwise it returns a json error</returns>
-        </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.Delete(System.String)">
-            <summary>
-            Deletes a user
-            </summary>
-            <param name="id">User identification string</param>
-            <returns>Status code 200 </returns>
-        </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.ResetPassword(System.String,Newtonsoft.Json.Linq.JObject)">
-            <summary>
-            reset the password for a specific user
-            </summary>
-            <remarks>
-                Sample request: 
-                {
-                    "token" : "user refresh token",
-                    "newPassword" : "Strign new password"
-                }
-            </remarks>
-            <param name="id">User identification string</param>
-            <param name="json">JObject</param>
-            <returns></returns>
-        </member>
-        <member name="M:middleware_autorization_authentication_auditing.Controllers.UserController.TokenReset(System.String)">
-            <summary>
-             Generate token password refresh
-            </summary>
-            <param name="id">User identification string</param>
-            <returns>String token</returns>
+            <typeparam name="TEntity">Database model class</typeparam>
         </member>
         <member name="T:middleware.Controllers.AccountController">
             <summary>
@@ -86,12 +42,56 @@
             </summary>
             <returns>Json array with Claims information</returns>
         </member>
-        <member name="M:middleware.Controllers.AccountController.Register(middleware_autorization_authentication_auditing.Models.User)">
+        <member name="M:middleware.Controllers.AccountController.Register(middleware.Models.User)">
             <summary>
             Register a new User
             </summary>
             <param name="user">User Object format</param>
             <returns>Return registred user</returns>
+        </member>
+        <member name="T:middleware.Controllers.OrderController">
+            <summary>
+            Order Controller
+            </summary>
+        </member>
+        <member name="M:middleware.Controllers.OrderController.GetAll">
+            <summary>
+            Return all Orders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:middleware.Controllers.OrderController.ViewOrder(System.String)">
+            <summary>
+            Return a specific order
+            </summary>
+            <param name="id">ORder </param>
+            <returns></returns>
+        </member>
+        <member name="T:middleware.Controllers.RequestController">
+            <summary>
+            Request controller
+            </summary>
+        </member>
+        <member name="M:middleware.Controllers.RequestController.GetAll">
+            <summary>
+            Returns all registered Request Object
+            </summary>
+            <returns>Json Object request</returns>
+        </member>
+        <member name="M:middleware.Controllers.RequestController.ViewRequest(System.String)">
+            <summary>
+            Returns a specific Request Object
+            </summary>
+            <param name="id">Request identification string</param>
+            <returns>Json Object request</returns>
+        </member>
+        <member name="M:middleware.Controllers.RequestController.EditRequest(System.String,middleware.Models.Request)">
+            <summary>
+            Update Request
+            </summary>
+            <param name="id">Request identification string</param>
+            <param name="request">Json object</param>
+            <returns>Status code 200</returns>
         </member>
         <member name="T:middleware.Controllers.RoleController">
             <summary>
@@ -182,6 +182,114 @@
             <param name="id">Role identification string</param>
             <param name="userId">User identification string</param>
             <returns>Status code 200</returns>
+        </member>
+        <member name="T:middleware.Controllers.UserController">
+            <summary>
+            User Controller
+            </summary>
+        </member>
+        <member name="M:middleware.Controllers.UserController.GetAll">
+            <summary>
+            Returns all registered users
+            </summary>
+            <returns>Json Array</returns>
+        </member>
+        <member name="M:middleware.Controllers.UserController.FindById(System.String)">
+            <summary>
+            Returns a specific user
+            </summary>
+            <param name="id">User identification string</param>
+            <returns>Json Object</returns>
+        </member>
+        <member name="M:middleware.Controllers.UserController.Update(System.String,middleware.Models.User)">
+            <summary>
+            Updates a specific user
+            </summary>
+            <param name="id">User identification string</param>
+            <param name="userModel">User object</param>
+            <returns>if it is successfully updated it returns a user, otherwise it returns a json error</returns>
+        </member>
+        <member name="M:middleware.Controllers.UserController.Delete(System.String)">
+            <summary>
+            Deletes a user
+            </summary>
+            <param name="id">User identification string</param>
+            <returns>Status code 200 </returns>
+        </member>
+        <member name="M:middleware.Controllers.UserController.ResetPassword(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Reset the password for a specific user
+            </summary>
+            <remarks>
+                Sample request: 
+                {
+                    "token" : "user refresh token",
+                    "newPassword" : "Strign new password"
+                }
+            </remarks>
+            <param name="id">User identification string</param>
+            <param name="json">JObject</param>
+            <returns></returns>
+        </member>
+        <member name="M:middleware.Controllers.UserController.TokenReset(System.String)">
+            <summary>
+            Generate token password refresh
+            </summary>
+            <param name="id">User identification string</param>
+            <returns>String token</returns>
+        </member>
+        <member name="T:middleware.Helpers.Permission">
+            <summary>
+            permission for modules
+            </summary>
+        </member>
+        <member name="T:middleware.Helpers.Policies">
+            <summary>
+            Class responsible for creating access policies
+            </summary>
+        </member>
+        <member name="T:middleware.Helpers.TokenHelper">
+            <summary>
+            Support class for creating tokens
+            </summary>
+        </member>
+        <member name="M:middleware.Helpers.TokenHelper.TokenWithRolesClaims(middleware.Models.User,Microsoft.AspNetCore.Identity.UserManager{middleware.Models.User},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Class responsible for fixing user claims
+            </summary>
+            <param name="user">Logged User</param>
+            <param name="userManager">Usermanager</param>
+            <param name="roleManager">RoleManager</param>
+            <param name="configuration">configuration - responsible for capturing information from app.json</param>
+            <returns> String JWT token</returns>
+        </member>
+        <member name="T:middleware.Respositories.Repository`1">
+            <summary>
+            Abstract class that standardizes data access
+            </summary>
+            <typeparam name="TEntity">Model entity of the database</typeparam>
+        </member>
+        <member name="T:middleware.Security.TokenService">
+            <summary>
+            Class responsible for managing jwt tokens
+            </summary>
+        </member>
+        <member name="M:middleware.Security.TokenService.GenerateToken(middleware.Models.User,System.Byte[],System.Collections.Generic.Dictionary{Microsoft.AspNetCore.Identity.IdentityRole,System.Collections.Generic.IList{System.Security.Claims.Claim}})">
+            <summary>
+            Generate JWT token
+            </summary>
+            <param name="user">Logged User</param>
+            <param name="key">Secret key application</param>
+            <param name="pairRoles">Dictionary of roles and claims</param>
+            <returns>String Token JWT</returns>
+        </member>
+        <member name="M:middleware.Security.TokenService.Claims(middleware.Models.User,System.Collections.Generic.Dictionary{Microsoft.AspNetCore.Identity.IdentityRole,System.Collections.Generic.IList{System.Security.Claims.Claim}})">
+            <summary>
+            Method responsible for organizing user statements
+            </summary>
+            <param name="user">Logged User</param>
+            <param name="pairRoles">Dictionary of roles and claims</param>
+            <returns>Array of claim</returns>
         </member>
     </members>
 </doc>

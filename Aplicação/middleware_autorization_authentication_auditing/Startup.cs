@@ -10,8 +10,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using middleware.Context;
+using middleware.Contracts;
 using middleware.Helpers;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
+using middleware.Respositories;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.IO;
@@ -46,7 +49,7 @@ namespace middleware_autorization_authentication_auditing
                 {
                     Version = "v1",
                     Title = "Autenticação, autorização e auditoria API",
-                    Description = "Exemplo de autenticação, autorização, auditoria com jwt e perfis",
+                    Description = "Documentação do middleware autenticação, autorização e auditoria.",
                     TermsOfService = new Uri("https://github.com/gabriel2mm/"),
                     Contact = new OpenApiContact
                     {
@@ -67,10 +70,13 @@ namespace middleware_autorization_authentication_auditing
             });
             services.AddSwaggerGenNewtonsoftSupport();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddDbContext<Context.Context>(options => options.UseSqlServer(Configuration.GetConnectionString("principalConnection")), ServiceLifetime.Scoped);
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("principalConnection")), ServiceLifetime.Scoped);
             services.AddIdentity<User, IdentityRole>()
-             .AddEntityFrameworkStores<Context.Context>()
+             .AddEntityFrameworkStores<Context>()
              .AddDefaultTokenProviders();
+
+            services.AddScoped<IRepository<Order>, OrderRepository>();
+            services.AddScoped<IRepository<Request>, RequestRepository>();
 
             services.AddAuthentication(options =>
                 {
@@ -85,6 +91,14 @@ namespace middleware_autorization_authentication_auditing
                     options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters()
                     {
+                        LifetimeValidator = (DateTime? notBefore, DateTime? expires, SecurityToken securityToken, TokenValidationParameters validationParameters) =>
+                        {
+                            if (expires != null)
+                                if (DateTime.UtcNow < expires)
+                                    return true;
+
+                            return false;
+                        },
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(_key),
                         ValidateIssuer = false,
@@ -102,7 +116,6 @@ namespace middleware_autorization_authentication_auditing
                 });
             services.AddAuthorization(option => Policies.CreatePolicies(option));
         }
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,6 @@ namespace middleware.Controllers
         /// <returns>Json Array</returns>
         [HttpGet]
         [Authorize(policy: Helpers.Permission.Roles.Viwer)]
-        [Produces("application/json")]
         public IActionResult GetAll()
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -52,7 +51,6 @@ namespace middleware.Controllers
         [Route("{id?}")]
         [HttpGet]
         [Authorize(policy: Helpers.Permission.Roles.Viwer)]
-        [Produces("application/json")]
         public async Task<IActionResult> FindById(String id)
         {
             IdentityRole role = await _roleManager.FindByIdAsync(id);
@@ -75,7 +73,6 @@ namespace middleware.Controllers
         [Route("{id?}")]
         [HttpPut]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Update(String id, [FromBody] JObject json)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -100,7 +97,6 @@ namespace middleware.Controllers
         /// <returns>Json Object</returns>
         [HttpPost]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> CreateRole([FromBody] IdentityRole role)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -126,7 +122,6 @@ namespace middleware.Controllers
         [Route("{id?}")]
         [HttpDelete]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Delete(String id)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -157,7 +152,6 @@ namespace middleware.Controllers
         [Route("permission/{id?}")]
         [HttpPost]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Permission(String id, [FromBody] JObject json)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -198,7 +192,6 @@ namespace middleware.Controllers
         [Route("permission/{id?}")]
         [HttpDelete]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> RemovePermission(String id, [FromBody] JObject json)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -239,7 +232,6 @@ namespace middleware.Controllers
         [Route("{id}/users/{userId}")]
         [HttpPost]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> AddRoleInUser(String id, String userId)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -267,7 +259,6 @@ namespace middleware.Controllers
         [Route("{id}/users/{userId}")]
         [HttpDelete]
         [Authorize(policy: Helpers.Permission.Roles.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> RemoveRole(String id, String userId)
         {
             String _login = User.Claims.FirstOrDefault(c => c.Type == "Login").Value;
@@ -284,9 +275,7 @@ namespace middleware.Controllers
 
             _logger.LogError(String.Format("Erro ao remover usuário da role: O Usuário {0} tentou remover o usuário {1} na role {2}", _login, user.Login, role.Name));
             return BadRequest(new { error = "Não foi possível remover a role do usuário" });
-
         }
-
     }
 }
 

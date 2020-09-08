@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using middleware.Helpers;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -53,7 +53,6 @@ namespace middleware.Controllers
         [Route("authenticate")]
         [AllowAnonymous]
         [HttpPost]
-        [Produces("application/json")]
         public async Task<IActionResult> Authenticate([FromBody] JObject login)
         {
             try
@@ -85,7 +84,6 @@ namespace middleware.Controllers
         /// <returns>Json array with Claims information</returns>
         [HttpGet]
         [Authorize]
-        [Produces("application/json")]
         public IActionResult UserClaims()
         {
             Dictionary<String, String> pairsClaims = new Dictionary<string, string>();
@@ -109,7 +107,6 @@ namespace middleware.Controllers
         [Route("register")]
         [HttpPost]
         [Authorize(policy: Helpers.Permission.Accounts.Manager)]
-        [Produces("application/json")]
         public async Task<IActionResult> Register([FromBody] User user)
         {
             try

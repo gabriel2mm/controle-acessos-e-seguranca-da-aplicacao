@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using middleware.Models;
 using middleware.Security;
-using middleware_autorization_authentication_auditing.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

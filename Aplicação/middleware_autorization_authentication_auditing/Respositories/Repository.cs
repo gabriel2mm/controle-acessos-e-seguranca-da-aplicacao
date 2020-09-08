@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using middleware.Contracts;
-using middleware_autorization_authentication_auditing.Context;
 using System;
 using System.Linq;
 
@@ -13,9 +12,9 @@ namespace middleware.Respositories
     public abstract class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : class
     {
         private bool isDisposed;
-        protected readonly Context _context;
+        protected readonly Context.Context _context;
 
-        public Repository(Context context)
+        public Repository(Context.Context context)
         {
             _context = context;
         }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using middleware_autorization_authentication_auditing.Models;
+using middleware.Models;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -27,7 +27,7 @@ namespace middleware.Security
             {
                 Subject = new ClaimsIdentity(Claims(user, pairRoles)),
                 IssuedAt = DateTime.UtcNow,
-                Expires = DateTime.UtcNow.AddHours(1),
+                Expires = DateTime.UtcNow.AddMinutes(15),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);

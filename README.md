@@ -61,7 +61,7 @@ Os logs com o nível `INFO` estão atrelados a ações executadas pelo usuário,
 
 ## Arquitetura
 
-O projeto utiliza o modelo organizacional DDD(Domain, Driven, Design) e utiliza o padrão de arquitetura Repository, isolando o acesso aos dados seguindo o principio SOLID.
+O projeto utiliza o modelo organizacional DDD(Domain, Driven, Design) e utiliza o padrão de arquitetura Repository, isolando as responsabilidades principais seguindo os principios SOLID.
 
 ## Criação de Módulos Adicionais
 Como o propósito deste desenvolvimento é gerenciar os acessos e permissões foram inserido dois módulos para exemplificar. Assim como estes dois módulos, o sistema é capaz de ter inúmeros módulos cada qual com seu grupo de permissão.

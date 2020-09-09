@@ -54,10 +54,10 @@ Estas permissões se dividem em 3 grupos, são eles: **Manager, Viwer e user.**
 ## Auditoria
 Toda requisição feita para `API` gera um log, que foi divido em dois níveis: 
 
- - Informação
- - Error
+ - INFO
+ - ERROR
 
-Os logs de informação estão atrelados a ações executadas pelo usuário e os logs de erro está ligado a exceções lançadas pelo sistema.
+Os logs com o nível `INFO` estão atrelados a ações executadas pelo usuário, assim como, os logs nivel `ERROR` está ligado a exceções lançadas pelo sistema.
 
 ## Arquitetura
 

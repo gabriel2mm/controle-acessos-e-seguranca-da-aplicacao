@@ -1,4 +1,0 @@
-2020-09-05T18:02:09.3518876-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
-2020-09-05T18:02:09.3639043-03:00  [INF] Hosting environment: "Development" (c3307c92)
-2020-09-05T18:02:09.3640574-03:00  [INF] Content root path: "F:\Projetos\Faculdade\Trabalho - middleware aal\middleware_autorization_authentication_auditing\middleware_autorization_authentication_auditing" (b5d60022)
-2020-09-05T18:02:33.7832451-03:00 80000089-0006-fe00-b63f-84710c7967bb [INF] O Usuário gabriel2mm visualizou a lista de roles (32d6e215)

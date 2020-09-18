@@ -40,16 +40,13 @@ Quando o usuário é autenticado no sistema, um `jason web token` é gerado. Est
 
 ## Autorização
 
-A cada requisição para um `endpoint` é verificado se o usuário possui a permissão para  executar a ação. Estas permissões foram dadas através de perfil.  Cada perfil possui autorizações independentes, criando a possibilidade inúmeros perfis com permissões diferente.
+Cada usuário possui uma organização a qual são atrelados os usuários, perfis, modulos e suas permissões necessárias. Um usuário pode gerenciar outros usuários e controlar os acessos, pois este posuirá o perfil de manager, na qual ele poderá atribuir a outros usuários caso ache necessário. 
+O Manager gerencia todos os usuários, perfis de sua organização e permissões individuais para cada usuário, bem como, pode definir outros usuários como manager. Ao entrar um novo modulo na aplicação, o manager é responsável por atribuir a permissão a um perfil ou a um usuário especifico, concendo o acesos para tal.
 
-Estas permissões se dividem em 3 grupos, são eles: **Manager, Viwer e user.**
+Quando um novo cliente quiser utilizar o middleware de autenticação, um administrador do sistema irá criar uma organização, com os módulos e permissões necessárias, bem como um usuário com perfil de managar para disponibilizar ao cliente.
 
- - **Manager**: Fornece acesso para visualizar e modificar
-   itens de módulo especifico. 
- - **Viwer**: Fornece acesso
-   apenas a visualização de todos os itens de um determinado módulo. 
- - **User**: É a permissão default para todos os perfis e libera
-   acesso somente aos itens do usuário logado.
+Os usuários não tem acesso para criar perfils ou permissões de manager ou admin.
+
 
 ## Auditoria
 Toda requisição feita para `API` gera um log, que foi divido em dois níveis: 

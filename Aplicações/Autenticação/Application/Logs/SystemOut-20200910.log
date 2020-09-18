@@ -1,0 +1,417 @@
+2020-09-10T22:56:06.7155167-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-10T22:56:06.7386604-03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-10T22:56:06.7393125-03:00  [INF] Content root path: "F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application" (b5d60022)
+2020-09-10T23:08:50.4397015-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-10T23:08:50.4530905-03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-10T23:08:50.4533489-03:00  [INF] Content root path: "F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application" (b5d60022)
+2020-09-10T23:08:58.2806244-03:00 80000011-0000-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("215"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Ativo], [a].[Usuario], [a].[Nome], [a].[OrganizationId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)" (627a98df)
+2020-09-10T23:08:58.4943493-03:00 80000011-0000-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:08:58.7696090-03:00 80000011-0000-ff00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:14.6113642-03:00 80000012-0000-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("13"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Ativo], [a].[Usuario], [a].[Nome], [a].[OrganizationId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)" (627a98df)
+2020-09-10T23:10:14.6254255-03:00 80000012-0000-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:14.7630156-03:00 80000012-0000-ff00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:18.1629637-03:00 80000013-0000-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("7"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Ativo], [a].[Usuario], [a].[Nome], [a].[OrganizationId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)" (627a98df)
+2020-09-10T23:10:18.1725546-03:00 80000013-0000-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:18.2891026-03:00 80000013-0000-ff00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:49.3190746-03:00 80000014-0000-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("17"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Ativo], [a].[Usuario], [a].[Nome], [a].[OrganizationId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)" (627a98df)
+2020-09-10T23:10:49.3479892-03:00 80000014-0000-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:10:49.5225548-03:00 80000014-0000-ff00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:11:01.1054298-03:00 80000015-0000-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("163"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Ativo], [a].[Usuario], [a].[Nome], [a].[OrganizationId]
+FROM [AspNetUsers] AS [a]
+WHERE ([a].[Discriminator] = N'User') AND ([a].[NormalizedUserName] = @__normalizedUserName_0)" (627a98df)
+2020-09-10T23:11:01.1244960-03:00 80000015-0000-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Nome de coluna 'Ativo' inválido.
+Nome de coluna 'OrganizationId' inválido.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+ClientConnectionId:56236d47-5955-40ab-84e9-b9c4b4de9222
+Error Number:207,State:1,Class:16
+2020-09-10T23:13:24.8793375-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-10T23:13:24.8884446-03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-10T23:13:24.8886242-03:00  [INF] Content root path: "F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application" (b5d60022)
+2020-09-10T23:13:37.4073597-03:00 8000001b-0004-fc00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2020-09-10T23:13:48.0641006-03:00 8000001b-0004-fc00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+2020-09-10T23:13:51.1120505-03:00 8000001c-0004-fc00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2020-09-10T23:14:28.7805471-03:00 8000001c-0004-fc00-b63f-84710c7967bb [ERR] Não foi possível recuperar usuário (e01b7d26)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.FindByNameAsync(String userName)
+   at Middleware.Application.Controllers.AccountController.Authenticate(JObject login) in F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application\Controllers\AccountController.cs:line 60
+2020-09-10T23:14:35.5419947-03:00 8000001d-0004-fc00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2020-09-10T23:16:38.4197620-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-10T23:16:38.4308827-03:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-10T23:16:38.4312968-03:00  [INF] Content root path: "F:\Projetos\Faculdade\Trabalho - middleware aal\Aplicacao_controle_seguranca\Application" (b5d60022)
+2020-09-10T23:16:48.7474776-03:00 8000000f-0005-ff00-b63f-84710c7967bb [ERR] An exception occurred while iterating over the results of a query for context type '"Middleware.Infrastructure.Data.Context.Context"'."
+""System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()" (f5c7ac34)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalMixedEntityEntry..ctor(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.NewInternalEntityEntry(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryFactory.Create(IStateManager stateManager, IEntityType entityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTrackingFromQuery(IEntityType baseEntityType, Object entity, ValueBuffer& valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.QueryContext.StartTracking(IEntityType entityType, Object entity, ValueBuffer valueBuffer)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()

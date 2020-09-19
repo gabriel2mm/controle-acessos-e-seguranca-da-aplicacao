@@ -51,14 +51,14 @@ Os usuários não tem acesso para criar perfils ou permissões de manager ou adm
 ## Auditoria
 Toda requisição feita para `API` gera um log, que foi divido em dois níveis: 
 
- - Informação
- - Error
+ - INFO
+ - ERROR
 
-Os logs de informação estão atrelados a ações executadas pelo usuário e os logs de erro está ligado a exceções lançadas pelo sistema.
+Os logs com o nível `INFO` estão atrelados a ações executadas pelo usuário, assim como, os logs nivel `ERROR` está ligado a exceções lançadas pelo sistema.
 
 ## Arquitetura
 
-O projeto utiliza o modelo organizacional DDD(Domain, Driven, Design) e utiliza o padrão de arquitetura Repository, isolando o acesso aos dados seguindo o principio SOLID.
+O projeto utiliza o modelo organizacional DDD(Domain, Driven, Design) e utiliza o padrão de arquitetura Repository, isolando as responsabilidades principais seguindo os principios SOLID.
 
 ## Criação de Módulos Adicionais
 Como o propósito deste desenvolvimento é gerenciar os acessos e permissões foram inserido dois módulos para exemplificar. Assim como estes dois módulos, o sistema é capaz de ter inúmeros módulos cada qual com seu grupo de permissão.

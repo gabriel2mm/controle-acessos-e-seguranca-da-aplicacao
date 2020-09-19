@@ -54,7 +54,7 @@ Toda requisição feita para `API` gera um log, que foi divido em dois níveis:
  - INFO
  - ERROR
 
-Os logs com o nível `INFO` estão atrelados a ações executadas pelo usuário, assim como, os logs nivel `ERROR` está ligado a exceções lançadas pelo sistema.
+Os logs com o nível `INFO` estão atrelados a ações executadas pelo usuário, assim como, os logs com o nível `ERROR` está ligado a exceções lançadas pelo sistema.
 
 ## Arquitetura
 

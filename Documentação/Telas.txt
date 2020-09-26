@@ -1,0 +1,1 @@
+Professor as telas da aplicação para teste são do swagger e estão dentro da aplicação.
